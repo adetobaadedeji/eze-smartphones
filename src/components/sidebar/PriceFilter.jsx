@@ -62,7 +62,7 @@ const PriceFilter = () => {
 
 	console.log(min, max)
 
-	const rangeSelector = (event, newValue) => {
+	const handleRange = (event, newValue) => {
 		setValue(newValue)
 		console.log(newValue)
 	}
@@ -88,13 +88,13 @@ const PriceFilter = () => {
 			<h3 className='mb-10'>Price Filter</h3>
 			<Box sx={{ width: 160 }} className='pl-4'>
 				<PriceSlider
+					getAriaLabel={() => 'Price Range'}
 					value={value}
-					onChange={rangeSelector}
+					onChange={handleRange}
 					valueLabelDisplay='on'
 					getAriaValueText={valuetext}
 					valueLabelFormat={valuetext}
 					size='small'
-					aria-label='Small'
 				/>
 			</Box>
 			<div className='flex flex-col px-2 ml-4 space-y-4 mt-4'>
